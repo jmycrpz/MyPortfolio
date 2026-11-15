@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamiya | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Jam's Portfolio ♡</h2>
+
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#java" class="nav-link">Java Project</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- Home Section -->
+        <section id="home" class="home page active">
+
+            <div class="home-content">
+                <p class="welcome">♡ WELCOME TO MY PORTFOLIO ♡</p>
+
+                <h1>Hi! I'm <span>Jamiya D. Corpuz</span></h1>
+
+                <h3>BSIT-1B</h3>
+
+                <p>
+                    I'm a first-year Information Technology student
+                    who is learning about programming, web development,
+                    and technology. So this website is where I share my
+                    personal information, skills, education, and
+                    programming projects.
+                </p>
+
+                <a href="#about" class="btn">Get to Know Me</a>
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="page">
+
+            <h2>About Me</h2>
+
+            <div class="card">
+                <h3>Personal Information</h3>
+
+                <p><strong>Name:</strong> Jamiya D. Corpuz</p>
+                <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+                <p><strong>Year Level:</strong> First Year</p>
+                <p><strong>Section:</strong> BSIT-1B</p>
+                <p><strong>Email:</strong> corpuzjamiyadelacruz@gmail.com</p>
+
+                <br>
+
+                <h3>Introduction</h3>
+
+                <p>
+                    I am a first-year IT student who is interested
+                    in learning more about computers, programming,
+                    and technology. I am still developing my skills
+                    and knowledge, but I am willing to learn and
+                    improve through practice and experience.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Education Section -->
+        <section id="education" class="page">
+
+            <h2>Educational Background</h2>
+
+            <div class="card">
+                <h3>College</h3>
+                <p><strong>School:</strong> Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+                <p><strong>Course:</strong> BS Information Technology</p>
+                <p><strong>Year:</strong> First Year College</p>
+            </div>
+
+            <div class="card">
+                <h3>Senior High School</h3>
+                <p><strong>School:</strong> Eduardo L. Joson Memorial High School</p>
+                <p><strong>Strand:</strong> TVL Information and Communication Technology (ICT)</p>
+                <p><strong>Year Graduated:</strong> 2026</p>
+            </div>
+
+            <div class="card">
+                <h3>Junior High School</h3>
+                <p><strong>School:</strong> Eduardo L. Joson Memorial High School</p>
+                <p><strong>Year Graduated:</strong> 2024</p>
+            </div>
+
+            <div class="card">
+                <h3>Elementary</h3>
+                <p><strong>School:</strong> Ramon Magsaysay Elementary School</p>
+                <p><strong>Year Graduated:</strong> 2019</p>
+            </div>
+
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="page">
+
+            <h2>My Skills</h2>
+
+            <div class="card">
+
+                <p>
+                    Here are some of the skills I am currently learning
+                    and developing as an IT student.
+                </p>
+
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Java</span>
+                    <span>Basic Programming</span>
+                    <span>Microsoft Office</span>
+                    <span>Teamwork</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Java Project Section -->
+        <section id="java" class="page">
+
+            <h2>My Java Project</h2>
+
+            <div class="card">
+
+                <h3>Event Ticket Sales Analyzer</h3>
+
+                <p><strong>Project:</strong> Final Performance Task</p>
+                <p><strong>Programming Language:</strong> Java</p>
+
+                <br>
+
+                <h3>Project Description</h3>
+
+                <p>
+                    Event Ticket Sales Analyzer stores the number
+                    of tickets sold for 10 events in an int array,
+                    accepting nonnegative integers. It calculates
+                    total and average ticket sales, identifies the
+                    highest-selling event, and counts events selling
+                    at least 100 tickets.
+                </p>
+
+                <br>
+
+                <h3>Java Source Code</h3>
+
+                <pre><code>import java.util.Scanner;
+
+public class TicketSalesAnalyzer {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int[] tickets = new int[10];
+        int total = 0;
+        int highest = 0;
+        int count = 0;
+        double average;
+
+        for (int i = 0; i < 10; i++) {
+
+            System.out.print("Enter tickets sold for event "
+                    + (i + 1) + ": ");
+
+            tickets[i] = input.nextInt();
+
+            while (tickets[i] < 0) {
+                System.out.print(
+                    "Invalid number. Enter a nonnegative number: ");
+                tickets[i] = input.nextInt();
+            }
+
+            total += tickets[i];
+
+            if (tickets[i] > highest) {
+                highest = tickets[i];
+            }
+
+            if (tickets[i] >= 100) {
+                count++;
+            }
+        }
+
+        average = total / 10.0;
+
+        System.out.println("\n--- Event Ticket Sales Report ---");
+        System.out.println("Total tickets sold: " + total);
+        System.out.println("Average ticket sales: " + average);
+        System.out.println("Highest tickets sold: " + highest);
+        System.out.println(
+            "Events selling at least 100 tickets: " + count);
+
+        System.out.println("\nHighest-selling event(s):");
+
+        for (int i = 0; i < 10; i++) {
+            if (tickets[i] == highest) {
+                System.out.println("Event " + (i + 1));
+            }
+        }
+
+        input.close();
+    }
+}</code></pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Jam's Portfolio ♡</p>       
+    </footer>
+
+
+    <!-- Navigation JavaScript -->
+    <script>
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(pageId) {
+
+            // Hide all sections
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Remove active navigation
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Find selected section
+            const selectedPage = document.getElementById(pageId);
+
+            // Show selected section
+            if (selectedPage && selectedPage.classList.contains('page')) {
+                selectedPage.classList.add('active');
+            } else {
+                document.getElementById('home').classList.add('active');
+                pageId = 'home';
+            }
+
+            // Highlight selected navigation
+            const selectedLink = document.querySelector(
+                '.nav-link[href="#' + pageId + '"]'
+            );
+
+            if (selectedLink) {
+                selectedLink.classList.add('active');
+            }
+
+            // Return to top
+            window.scrollTo(0, 0);
+        }
+
+
+        // Navigation click event
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+            link.addEventListener('click', function(event) {
+
+                event.preventDefault();
+
+                const pageId = this.getAttribute('href').substring(1);
+
+                history.pushState(null, '', '#' + pageId);
+
+                showPage(pageId);
+
+            });
+
+        });
+
+
+        // Browser back and forward buttons
+        window.addEventListener('popstate', function() {
+
+            const pageId = location.hash.substring(1) || 'home';
+
+            showPage(pageId);
+
+        });
+
+
+        // Display correct page when website opens
+        window.addEventListener('DOMContentLoaded', function() {
+
+            const pageId = location.hash.substring(1) || 'home';
+
+            showPage(pageId);
+
+        });
+
+    </script>
+
+</body>
+</html>

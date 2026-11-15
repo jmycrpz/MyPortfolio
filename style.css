@@ -1,0 +1,237 @@
+/* General Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7fc;
+    color: #51445a;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background-color: #e8d8f5;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav h2 {
+    color: #86549a;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #714c83;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d47da9;
+}
+
+/* Active Navigation */
+nav ul li a.active {
+    color: #d47da9;
+    border-bottom: 2px solid #d47da9;
+    padding-bottom: 5px;
+}
+
+/* PAGE NAVIGATION */
+
+/* Hide all sections */
+.page {
+    display: none;
+    min-height: 80vh;
+}
+
+/* Show only selected section */
+.page.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Home */
+.home {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 10%;
+    background: linear-gradient(
+        135deg,
+        #fce4ef,
+        #eee1fa
+    );
+}
+
+/* Keep Home centered when active */
+.home.page.active {
+    display: flex;
+}
+
+.home-content {
+    max-width: 700px;
+}
+
+.welcome {
+    color: #a36aab;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.home h1 {
+    font-size: 45px;
+    color: #76518a;
+    margin: 10px 0;
+}
+
+.home h1 span {
+    color: #d47da9;
+}
+
+.home h3 {
+    color: #a36aab;
+    margin-bottom: 15px;
+}
+
+.home p {
+    margin-bottom: 20px;
+}
+
+/* Page Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: #b58acb;
+    color: white;
+    padding: 11px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #d47da9;
+}
+
+/* Sections */
+section {
+    padding: 60px 10%;
+}
+
+section h2 {
+    text-align: center;
+    color: #9564a5;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 850px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(120, 80, 140, 0.10);
+    border: 1px solid #f0dff2;
+}
+
+.card h3 {
+    color: #a36aab;
+    margin-bottom: 12px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.skills span {
+    background-color: #f1e4f7;
+    color: #80558e;
+    padding: 9px 17px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Java Code */
+pre {
+    background-color: #30263a;
+    color: #fceafa;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+/* Footer */
+footer {
+    background-color: #e8d8f5;
+    color: #76518a;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    .home h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 40px 6%;
+    }
+}
